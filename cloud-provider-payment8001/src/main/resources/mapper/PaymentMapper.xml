@@ -4,11 +4,11 @@
     <insert id="create" parameterType="com.atguigu.entities.Payment" useGeneratedKeys="true" keyProperty="id">
         INSERT into payment(serial) values (#{payment});
     </insert>
-    <select id="getPayment" parameterType="Long" resultType="BaseResultMap">
+    <select id="getPayment" parameterType="Long" resultMap="BaseResultMap">
       select * from  payment where id=#{id};
     </select>
-    <resultMap id="BaseResultMap" type="com.atguigu.entities.Payment">
-        <id column="id"></id>
-        <collection property="" ></collection>
+    <resultMap id="BaseResultMap" type="com.atguigu.entities.Payment" >
+        <id column="id" property="id" jdbcType="BIGINT" ></id>
+        <result column="serial" property="serial" jdbcType="VARCHAR" ></result>
     </resultMap>
 </mapper>
