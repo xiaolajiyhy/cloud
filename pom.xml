@@ -9,6 +9,8 @@
   <version>1.0-SNAPSHOT</version>
     <modules>
         <module>cloud-provider-payment8001</module>
+        <module>cloud-consumer-order80</module>
+        <module>cloud-api-commons</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -69,31 +71,26 @@
         <artifactId>druid</artifactId>
         <version>${druid.version}</version>
       </dependency>
-
       <!--mybatis-->
       <dependency>
         <groupId>org.mybatis.spring.boot</groupId>
         <artifactId>mybatis-spring-boot-starter</artifactId>
         <version>${mybatis.spring.boot.version}</version>
       </dependency>
-      <!--junit-->
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${junit.version}</version>
-      </dependency>
-      <!--log4j-->
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${log4j.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.baomidou</groupId>
-        <artifactId>mybatis-plus</artifactId>
-        <version>2.3</version>
-      </dependency>
+
+
     </dependencies>
   </dependencyManagement>
-
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+            <fork>true</fork>
+            <addResources>true</addResources>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
