@@ -12,13 +12,13 @@ public class orderController {
 
     @Autowired
     private RestTemplate restTemplate;
-    private  static final  String PAYMENT_URL="http://localhost:8089/payment";
+    private  static final  String PAYMENT_URL="http://CLOUD-PAYMENT-SERVICE";
     @PostMapping("/payment/create")
     public CommonResult<Payment> create(@RequestBody  Payment payment){
         return  restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);
     }
     @GetMapping("/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id){
-        return  restTemplate.getForObject(PAYMENT_URL+"/"+id,CommonResult.class);
+        return  restTemplate.getForObject(PAYMENT_URL+"/payment/"+id,CommonResult.class);
     }
 }

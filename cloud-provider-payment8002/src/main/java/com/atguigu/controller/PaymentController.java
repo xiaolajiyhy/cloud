@@ -5,12 +5,7 @@ import com.atguigu.entities.Payment;
 import com.atguigu.service.iPaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 
 @RestController
 @Slf4j
@@ -19,9 +14,8 @@ public class PaymentController {
 
   @Autowired
   private iPaymentService paymentService;
-  @Autowired
-  private DiscoveryClient discoveryClient;
     @PostMapping(value = "/create")
+
     public  CommonResult create(@RequestBody Payment payment){
        int result=paymentService.create(payment);
 
@@ -36,9 +30,9 @@ public class PaymentController {
     public CommonResult getPaymentById(@PathVariable("id") Long id){
         Payment payment = paymentService.getPayment(id);
         if(payment==null){
-            return  new CommonResult(444,"fail8001",null);
+            return  new CommonResult(444,"fail8002",null);
         }else {
-            return  new CommonResult(200,"success8001",payment);
+            return  new CommonResult(200,"success8002",payment);
         }
     }
 

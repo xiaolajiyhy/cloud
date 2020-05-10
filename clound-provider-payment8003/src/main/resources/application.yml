@@ -1,0 +1,16 @@
+server:
+  port: 8003
+
+
+spring:
+  application:
+    name: cloud-payment-service
+  cloud:
+    zookeeper:
+      connect-string: 123.57.36.75:2181  #zk server的地址
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.57.36.75/db2019?useUncode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456146a
