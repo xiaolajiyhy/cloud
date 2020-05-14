@@ -9,6 +9,16 @@ spring:
     url: jdbc:mysql://123.57.36.75/db2019?useUncode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: 123456146a
+  zipkin:
+    base-url: http://localhost:9411 #发送个zipkin
+  sleuth:
+    sampler:
+      probability: 1  #采集比率
+
+
+
+
+
 
 eureka:
   client:

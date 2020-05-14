@@ -9,3 +9,6 @@ eureka:
     fetch-registry: true #查找别人的服务，
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+logging:
+  level:
+    com.atguihu.service.PaymentService: debug

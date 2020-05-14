@@ -16,6 +16,15 @@
       <module>cloud-provider-payment8002</module>
       <module>clound-provider-payment8003</module>
       <module>cloud-consumer-feign-order80</module>
+        <module>cloud-provider-hystrix-payment7098</module>
+        <module>cloud-consumer-hystrix-order7997</module>
+        <module>cloud--gateway-gateway9527</module>
+        <module>cloud-config-center-3344</module>
+        <module>cloud-config-client-3355</module>
+        <module>cloud-config-client-3366</module>
+        <module>cloud-stream-rabbitmq-provider8801</module>
+        <module>cloud-rabbitmq-consumer</module>
+        <module>cloud-rabbitmq-consumer8803</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -18,6 +18,4 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
     instance-id: payment8001 #就是暴露的主机和端口，有风险，有个用个别名在哪个eureka上显示
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.atguigu.entities
+

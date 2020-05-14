@@ -8,3 +8,7 @@ eureka:
     fetch-registry: false #不需要别人的服务，不查找
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000 #驱逐的时间
+    peer-node-read-timeout-ms: 3000

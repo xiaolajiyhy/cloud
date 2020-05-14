@@ -1,0 +1,29 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启和ribbon类似的功能，截取服务名到注册中心找服务
+      routes:
+        - id: payment_routh
+          uri: lb://CLOUD-PAYMENT-SERVICE  #lb 负载均衡的缩写
+          predicates:
+            - Path=/payment/**
+      filter:
+
+
+eureka:
+  client:
+    register-with-eureka: true #注册
+    fetch-registry: true #查找别人的服务，
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: payment8001 #就是暴露的主机和端口，有风险，有个用个别名在哪个eureka上显示
+    hostname: cloud-gateway-service
+
+

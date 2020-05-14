@@ -1,11 +1,18 @@
 server:
   port: 8081
+
 spring:
   application:
     name: cloud-order-service
+  zipkin:
+    base-url: http://localhost:9411 #发送个zipkin
+  sleuth:
+    sampler:
+      probability: 1  #采集比率
 eureka:
   client:
     register-with-eureka: true #注册
     fetch-registry: true #查找别人的服务，
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
